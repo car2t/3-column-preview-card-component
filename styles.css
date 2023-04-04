@@ -29,3 +29,21 @@ img {
   max-width: 100%;
 }
 /* END Reset */
+
+
+/* Custom Properties */
+:root {
+/* FONTS */
+  --font-family-regular: 'Lexend Deca',
+    sans-serif;
+  --font-family-bold: 'Big Shoulders Display',
+    cursive;
+
+/* COLORS */
+  --primary-bright-orange: hsl(31, 77%, 52%);
+  --primary-dark-cyan: hsl(184, 100%, 22%);
+  --primary-very-dark-cyan: hsl(179, 100%, 13%);
+  --neutral-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --neutral-light-grey: hsl(0, 0%, 95%);
+}
+/* END Custom Properties */
