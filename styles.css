@@ -1,0 +1,31 @@
+/* Reset styles */
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  /*   outline: 1px solid peachpuff; */
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  /* border: 5px dashed greenyellow; */
+}
+
+body {
+  /* border: 2px dotted blue; */
+  line-height: 1.4;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+/* END Reset */
