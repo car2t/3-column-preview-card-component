@@ -8,12 +8,8 @@
   padding: 0;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 html {
+  min-height: 100%;
   box-sizing: border-box;
   font-size: 100%;
   border: 5px dashed greenyellow;
@@ -93,5 +89,28 @@ section article[data-car-bodywork] {
   /* let articles grow and shrink */
   flex: 1; 
 
-  
+  /* creates cards/articles grid */
+  display: grid;
+  grid-template: 2rem auto 2rem auto 8rem 4rem auto 2rem / 2rem 25ch 2rem;
+}
+
+section article img {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+section article h2 {
+  grid-row: 4 / 5;
+  grid-column: 2 / 3;
+}
+
+section article p {
+  grid-row: 5 / 6;
+  grid-column: 2 / 3;
+  align-self: center;
+}
+
+section article a {
+  grid-row: 7 / 8;
+  grid-column: 2 / 3;
 }
