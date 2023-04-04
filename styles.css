@@ -86,6 +86,8 @@ section {
 }
 
 section article[data-car-bodywork] {
+  color: var(--neutral-transparent-white);
+  
   /* let articles grow and shrink */
   flex: 1; 
 
@@ -100,6 +102,10 @@ section article img {
 }
 
 section article h2 {
+  font-family: var(--font-family-bold);
+  font-size: 2.6em;
+  text-transform: uppercase;
+
   grid-row: 4 / 5;
   grid-column: 2 / 3;
 }
