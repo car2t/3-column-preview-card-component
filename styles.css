@@ -50,7 +50,7 @@ a {
 
 /* General Styles */
 body {
-  background-color: var(--neutral-light-grey);
+  background: var(--neutral-light-grey);
   font-family: var(--font-family-regular);
   font-size: 15px;
   line-height: 1.5;
@@ -71,7 +71,7 @@ main {
 
 footer {
   font-family: "Courier New", Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding-inline: 1rem;
 
   /* general layout position */
@@ -87,7 +87,7 @@ section {
 
 section article[data-car-bodywork] {
   color: var(--neutral-transparent-white);
-  
+
   /* let articles grow and shrink */
   flex: 1; 
 
@@ -119,4 +119,16 @@ section article p {
 section article a {
   grid-row: 7 / 8;
   grid-column: 2 / 3;
+}
+
+section article[data-car-bodywork="sedan"] {
+  background: var(--primary-bright-orange, orange);
+}
+
+section article[data-car-bodywork="suv"] {
+  background: var(--primary-dark-cyan, darkcyan);
+}
+
+section article[data-car-bodywork="luxury"] {
+  background: var(--primary-very-dark-cyan, darkslateblue);
 }
