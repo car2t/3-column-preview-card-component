@@ -3,7 +3,7 @@
 *::after,
 *::before {
   box-sizing: inherit;
-  /*   outline: 1px solid peachpuff; */
+  outline: 1px solid peachpuff;
   margin: 0;
   padding: 0;
 }
@@ -16,17 +16,21 @@ body {
 html {
   box-sizing: border-box;
   font-size: 100%;
-  /* border: 5px dashed greenyellow; */
+  border: 5px dashed greenyellow;
 }
 
 body {
-  /* border: 2px dotted blue; */
+  border: 2px dotted blue;
   line-height: 1.4;
 }
 
 img {
   display: block;
   max-width: 100%;
+}
+
+a {
+  text-decoration: none;
 }
 /* END Reset */
 
@@ -47,3 +51,34 @@ img {
   --neutral-light-grey: hsl(0, 0%, 95%);
 }
 /* END Custom Properties */
+
+/* General Styles */
+body {
+  background-color: var(--neutral-light-grey);
+  font-family: var(--font-family-regular);
+  font-size: 15px;
+  line-height: 1.5;
+
+  /* general layout grid */
+  display: grid;
+  grid-template: 4rem auto 5rem 1fr / 1fr;
+  justify-items: center;
+  align-items: start;
+}
+
+main {
+  padding-inline: 1rem;
+
+  /* general layout position */
+  grid-row: 4 / 5;
+}
+
+footer {
+  font-family: "Courier New", Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.2em;
+  padding-inline: 1rem;
+
+  /* general layout position */
+  grid-row: 2 / 3;
+}
+/* END General styles */
