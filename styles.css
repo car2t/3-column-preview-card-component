@@ -82,3 +82,16 @@ footer {
   grid-row: 2 / 3;
 }
 /* END General styles */
+
+section {
+  /* create flex container for cars bodywork articles */
+  display: flex;
+  flex-flow: row wrap;
+}
+
+section article[data-car-bodywork] {
+  /* let articles grow and shrink */
+  flex: 1; 
+
+  
+}
