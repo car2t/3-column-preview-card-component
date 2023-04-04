@@ -3,7 +3,7 @@
 *::after,
 *::before {
   box-sizing: inherit;
-  outline: 1px solid peachpuff;
+  /* outline: 1px solid peachpuff; */
   margin: 0;
   padding: 0;
 }
@@ -12,11 +12,11 @@ html {
   min-height: 100%;
   box-sizing: border-box;
   font-size: 100%;
-  border: 5px dashed greenyellow;
+  /* border: 5px dashed greenyellow; */
 }
 
 body {
-  border: 2px dotted blue;
+  /* border: 2px dotted blue; */
   line-height: 1.4;
 }
 
@@ -123,6 +123,7 @@ section article a {
 
 section article[data-car-bodywork="sedan"] {
   background: var(--primary-bright-orange, orange);
+  border-start-start-radius: 1em;border-end-start-radius: 1em;
 }
 
 section article[data-car-bodywork="suv"] {
@@ -131,4 +132,6 @@ section article[data-car-bodywork="suv"] {
 
 section article[data-car-bodywork="luxury"] {
   background: var(--primary-very-dark-cyan, darkslateblue);
+  border-start-end-radius: 1em;
+  border-end-end-radius: 1em;
 }
