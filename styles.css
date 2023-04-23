@@ -1,107 +1,128 @@
-/* Reset styles */
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-  /* outline: 1px solid peachpuff; */
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  min-height: 100%;
-  box-sizing: border-box;
-  font-size: 100%;
-  /* border: 5px dashed greenyellow; */
-}
-
-body {
-  /* border: 2px dotted blue; */
-  line-height: 1.4;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-a {
-  text-decoration: none;
-}
-/* END Reset */
-
-
 /* Custom Properties */
 :root {
-/* FONTS */
+  /* FONTS */
   --font-family-regular: 'Lexend Deca',
     sans-serif;
   --font-family-bold: 'Big Shoulders Display',
     cursive;
 
-/* COLORS */
+  /* COLORS */
   --primary-bright-orange: hsl(31, 77%, 52%);
   --primary-dark-cyan: hsl(184, 100%, 22%);
   --primary-very-dark-cyan: hsl(179, 100%, 13%);
   --neutral-transparent-white: hsla(0, 0%, 100%, 0.75);
   --neutral-light-grey: hsl(0, 0%, 95%);
+  /* Additional colors */
+  --footer-bk-color: #cece54;
+  --footer-links-color: #008000;
+  --footer-text-color: #ffffcd;
 }
+
 /* END Custom Properties */
+
+/* Reset styles */
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+a {
+  color: var(--footer-links-color, ForestGreen);
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* END Reset */
 
 /* General Styles */
 body {
   background: var(--neutral-light-grey);
   font-family: var(--font-family-regular);
   font-size: 15px;
-  line-height: 1.5;
+  min-block-size: 100vh;
+  line-height: 1.6;
 
   /* general layout grid */
   display: grid;
   grid-template: 4rem auto 5rem 1fr / 1fr;
+  grid-template: 4rem auto 5rem auto 4rem / minmax(1rem, 1fr) 4fr minmax(1rem, 1fr);
   justify-items: center;
   align-items: start;
 }
 
-main {
-  padding-inline: 1rem;
+body>* {
+  /* Sit footer and main element in the central column of body grid */
+  grid-column: 2 / 3;
+}
 
+main {
   /* general layout position */
   grid-row: 4 / 5;
 }
 
 footer {
+  background-color: var(--footer-bk-color, YellowGreen);
+  border-start-start-radius: 10% 20%;
+  border-start-end-radius: 10% 30%;
+  border-end-start-radius: 10% 30%;
+  border-end-end-radius: 10% 40%;
+  color: var(--footer-text-color, PaleGreen);
   font-family: "Courier New", Georgia, 'Times New Roman', Times, serif;
   font-size: 1.1em;
-  padding-inline: 1rem;
+  font-weight: bolder;
+  min-inline-size: calc(25ch + 4rem);
+  line-height: 1.1;
+  padding-inline: 2ch;
+  padding-block: 2ch;
 
   /* general layout position */
   grid-row: 2 / 3;
 }
-/* END General styles */
 
-section {
-  /* create flex container for cars bodywork articles */
-  display: flex;
-  flex-flow: row wrap;
+footer>p {
+  margin-block-end: 2ch;
 }
+
+footer a {
+  text-decoration: 1px var(--footer-text-color) wavy underline;
+}
+
+:is(a:hover, a:active, a:focus) {
+  color: var(--primary-bright-orange, Orange);
+  text-decoration: none;
+}
+
+
+/* END General styles */
 
 section article[data-car-bodywork] {
   color: var(--neutral-transparent-white);
-
-  /* let articles grow and shrink */
-  flex: 1; 
 
   /* creates cards/articles grid */
   display: grid;
   grid-template: 2rem auto 2rem auto 8rem 4rem auto 2rem / 2rem 25ch 2rem;
 }
 
-section article img {
+/* Sit all grid items in the article grid */
+article img {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
 }
 
-section article h2 {
+article h2 {
   font-family: var(--font-family-bold);
   font-size: 2.6em;
   text-transform: uppercase;
@@ -116,14 +137,34 @@ section article p {
   align-self: center;
 }
 
-section article a {
+article>a {
   grid-row: 7 / 8;
   grid-column: 2 / 3;
+
+  /* Decorate article links as buttons */
+  color: var(--primary-bright-orange, Orange);
+  background: var(--neutral-transparent-white, WhiteSmoke);
+  border-start-start-radius: 2em;
+  border-start-end-radius: 2em;
+  border-end-start-radius: 2em;
+  border-end-end-radius: 2em;
+  inline-size: max-content;
+  padding-block: 0.5em;
+  padding-inline: 2em;
+}
+
+/* END Sit all grid items in the article grid */
+
+article>a:hover {
+  background: inherit;
+  color: var(--neutral-transparent-white);
+  outline: 2px solid var(--neutral-transparent-white, WhiteSmoke);
 }
 
 section article[data-car-bodywork="sedan"] {
   background: var(--primary-bright-orange, orange);
-  border-start-start-radius: 1em;border-end-start-radius: 1em;
+  border-start-start-radius: 1em;
+  border-start-end-radius: 1em;
 }
 
 section article[data-car-bodywork="suv"] {
@@ -132,6 +173,39 @@ section article[data-car-bodywork="suv"] {
 
 section article[data-car-bodywork="luxury"] {
   background: var(--primary-very-dark-cyan, darkslateblue);
-  border-start-end-radius: 1em;
+  border-end-start-radius: 1em;
   border-end-end-radius: 1em;
+}
+
+/* At media to switch border-radius and create row of articles */
+@media screen and (device-width > 57rem) {
+
+  body {
+    background-image: url("./images/dawid-zawila-OCMcTCu97EE-unsplash.jpg");
+    backdrop-filter: grayscale(100%) blur(3px);
+  }
+
+  section {
+    display: flex;
+  }
+
+  section>article[data-car-bodywork="sedan"] {
+    border-start-start-radius: 1em;
+    border-start-end-radius: 0;
+    border-end-start-radius: 1em;
+  }
+
+  section>article[data-car-bodywork="luxury"] {
+    border-start-end-radius: 1em;
+    border-end-start-radius: 0;
+    border-end-end-radius: 1em;
+  }
+
+  footer {
+    border-start-start-radius: 50% 20%;
+    border-start-end-radius: 50% 80%;
+    border-end-start-radius: 5% 100%;
+    border-end-end-radius: 5% 30%;
+  }
+
 }
