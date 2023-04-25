@@ -182,7 +182,9 @@ section article[data-car-bodywork="luxury"] {
 
   body {
     background-image: url("./images/dawid-zawila-OCMcTCu97EE-unsplash.jpg");
-    backdrop-filter: grayscale(100%) blur(3px);
+/*     backdrop-filter: grayscale(100%) blur(3px); */
+    backdrop-filter: blur(3px) invert(33%);
+    opacity: 0.97;
   }
 
   section {
