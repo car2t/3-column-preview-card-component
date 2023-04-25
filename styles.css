@@ -57,7 +57,7 @@ body {
 
   /* general layout grid */
   display: grid;
-  grid-template: 4rem max-content 3rem auto 4rem / minmax(1rem, 1fr) 4fr minmax(1rem, 1fr);
+  grid-template: 4rem max-content 6rem auto 1fr / minmax(1rem, 1fr) 4fr minmax(1rem, 1fr);
   justify-items: center;
   align-items: start;
 }
